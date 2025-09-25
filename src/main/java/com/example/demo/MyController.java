@@ -14,15 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class MyController {
 			@Autowired
 			MyRepo repo;
-			@GetMapping("/cust")
+			@GetMapping("/")
 			public List<Customer> show(){
 				return this.repo.findAll();
 			}
-			@GetMapping("/cust/{id}")
+			@GetMapping("/{id}")
 				public Optional<Customer> showById(@PathVariable int id) {
 					return this.repo.findById(id);
 				}
-			@PostMapping("/cust")
+			@PostMapping("/")
 			public Customer save(@RequestBody Customer c) {
 				return this.repo.save(c);
 			}
